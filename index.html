@@ -31,7 +31,7 @@
         }
 
         /*-------------------------------------- popup window  --------------------------------------*/
-        #popup {
+        #popup1,#popup2 {
             position: fixed;
             top: 40%;
             left: 50%;
@@ -52,7 +52,7 @@
             border: 0.5px solid black;
         }
 
-        #popup.active {
+        #popup1.active,#popup2.active {
             top: 50%;
             visibility: visible;
             opacity: 1;
@@ -74,7 +74,7 @@
             font-size: 15px;
         }
 
-        .form .form-element input{
+        .form .form-element .inputcss{
             padding: 11px;
             background: #fff;
             color: #484848;
@@ -92,39 +92,71 @@
     <div class="container d-flex justify-content-center align-items-center p-2" id="blur">
         <div class="content">
             <p>Click 'click here for pop up window'.</p>
-            <button class="popup-btn text-light p-2" onclick="toggle()">Cliclk Here</button>
+            <button class="popup-btn text-light p-2" onclick="toggle1()">Cliclk Here pop-up-1</button>
+            <button class="popup-btn text-light p-2" onclick="toggle2()">Cliclk Here pop-up-2</button>
         </div>
     </div>
-    <!---------------------------------- popup window ---------------------------------->
-    <div id="popup" class="col-11 col-md-8 col-lg-5 p-2">
+    <!---------------------------------- popup window 1 ---------------------------------->
+    <div id="popup1" class="col-11 col-md-8 col-lg-5 p-2">
         <!---------------------- form  ---------------------->
-        <div class="close-btn" onclick="toggle()">&times;</div>
+        <div class="close-btn" onclick="toggle1()">&times;</div>
         <div class="form">     
             <div class="form-element m-1 m-md-2">
                 <label for="wp">Work Profile</label>
-                <input type="text" id="wp" placeholder=" Enter your work profile" class="w-100 d-block">
+                <input type="text" id="wp" placeholder=" Enter your work profile" class="w-100 d-block inputcss">
             </div>
             <div class="form-element m-1 m-md-2">
                 <label for="organization">Organization Name</label>
-                <input type="text" id="organization" placeholder=" Enter your organization name" class="w-100 d-block">
+                <input type="text" id="organization" placeholder=" Enter your organization name" class="w-100 d-block inputcss">
             </div>
             <div class="form-element m-1 m-md-2">
                 <label for="location">location</label>
-                <input type="text" id="location" placeholder=" Enter your location" class="w-100 d-block">
+                <input type="text" id="location" placeholder=" Enter your location" class="w-100 d-block inputcss">
             </div>
             <div class="form-element m-1 m-md-2">
                 <label for="location">location</label>
-                <input type="text" id="location" placeholder=" Enter your location" class="w-100 d-block">
+                <input type="text" id="location" placeholder=" Enter your location" class="w-100 d-block inputcss">
             </div>
             <div class="form-element m-1 m-md-2">
                 <div class="row">
                     <div class="col-6">
                         <label for="start"> Start Date</label>
-                        <input type="date" id="start" class="w-100 d-block">
+                        <input type="date" id="start" class="w-100 d-block inputcss">
                     </div>
                     <div class="col-6">
                         <label for="start"> Start Date</label>
-                        <input type="date" id="start" class="w-100 d-block">
+                        <input type="date" id="start" class="w-100 d-block inputcss">
+                    </div>
+                </div>
+            </div>
+            <div class="form-element m-1 m-md-2 d-flex justify-content-end">
+                <button class="popup-btn text-light p-2 w-25">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------- popup window 2 ---------------------------------->
+    <div id="popup2" class="col-11 col-md-8 col-lg-5 p-2">
+        <!---------------------- form  ---------------------->
+        <div class="close-btn" onclick="toggle2()">&times;</div>
+        <div class="form">     
+            <div class="form-element m-1 m-md-2">
+                <label for="wp">End Year</label>
+                <input type="text" id="wp" placeholder=" Enter your end year" class="w-100 d-block inputcss">
+            </div>
+            <div class="form-element m-1 m-md-2">
+                <label for="organization">Board Name</label>
+                <input type="text" id="organization" placeholder=" Enter your Board Name" class="w-100 d-block inputcss">
+            </div>
+            <div class="form-element m-1 m-md-2">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="ps">Performance Scale</label>
+                        <input type="text" id="ps" class="w-100 d-block inputcss">
+                    </div>
+                    <div class="col-6">
+                        <label for="cgpa">CGPA</label>
+                        <input type="text" id="cgpa" class="w-100 d-block inputcss">
                     </div>
                 </div>
             </div>
@@ -134,10 +166,16 @@
         </div>
     </div>
     <script type="text/javascript">
-        function toggle() {
+        function toggle1() {
             let blur = document.getElementById('blur');
             blur.classList.toggle('active');
-            let popup = document.getElementById('popup');
+            let popup = document.getElementById('popup1');
+            popup.classList.toggle('active');
+        }
+        function toggle2() {
+            let blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+            let popup = document.getElementById('popup2');
             popup.classList.toggle('active');
         }
     </script>
