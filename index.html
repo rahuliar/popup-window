@@ -31,7 +31,8 @@
         }
 
         /*-------------------------------------- popup window  --------------------------------------*/
-        #popup1,#popup2 {
+        #popup1,
+        #popup2 {
             position: fixed;
             top: 40%;
             left: 50%;
@@ -52,7 +53,8 @@
             border: 0.5px solid black;
         }
 
-        #popup1.active,#popup2.active {
+        #popup1.active,
+        #popup2.active {
             top: 50%;
             visibility: visible;
             opacity: 1;
@@ -68,13 +70,12 @@
             font-size: 20px;
         }
 
-        .form .form-element label,
-        .form-element span {
+        .form-element .textarea-label-span {
             margin-bottom: 4px;
             font-size: 15px;
         }
 
-        .form .form-element .inputcss{
+        .form .form-element .inputcss {
             padding: 11px;
             background: #fff;
             color: #484848;
@@ -100,35 +101,55 @@
     <div id="popup1" class="col-11 col-md-8 col-lg-5 p-2">
         <!---------------------- form  ---------------------->
         <div class="close-btn" onclick="toggle1()">&times;</div>
-        <div class="form">     
+        <div class="form">
             <div class="form-element m-1 m-md-2">
-                <label for="wp">Work Profile</label>
+                <div class=" row" >
+                    <span class="textarea-label-span">Martriculation status</span>
+                    <div class="col-6">
+                        <input type="radio" id="popup1-radio-1" name="popup1-radio">
+                        <label for="popup1-radio-1" class="textarea-label-span">Currently Working</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="radio" id="popup1-radio-2" name="popup1-radio">
+                        <label for="popup1-radio-2" class="textarea-label-span">Completed</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-element m-1 m-md-2">
+                <label for="wp" class="textarea-label-span">Work Profile</label>
                 <input type="text" id="wp" placeholder=" Enter your work profile" class="w-100 d-block inputcss">
             </div>
             <div class="form-element m-1 m-md-2">
-                <label for="organization">Organization Name</label>
-                <input type="text" id="organization" placeholder=" Enter your organization name" class="w-100 d-block inputcss">
+                <label for="organization" class="textarea-label-span">Organization Name</label>
+                <input type="text" id="organization" placeholder=" Enter your organization name"
+                    class="w-100 d-block inputcss">
             </div>
             <div class="form-element m-1 m-md-2">
-                <label for="location">location</label>
+                <label for="location" class="textarea-label-span">location</label>
                 <input type="text" id="location" placeholder=" Enter your location" class="w-100 d-block inputcss">
             </div>
             <div class="form-element m-1 m-md-2">
-                <label for="location">location</label>
-                <input type="text" id="location" placeholder=" Enter your location" class="w-100 d-block inputcss">
+                <label for="location" class="textarea-label-span">Experience type</label>
+                <input type="text" id="location" placeholder=" Enter your experience type"
+                    class="w-100 d-block inputcss">
             </div>
             <div class="form-element m-1 m-md-2">
                 <div class="row">
                     <div class="col-6">
-                        <label for="start"> Start Date</label>
+                        <label for="start" class="textarea-label-span"> Start Date</label>
                         <input type="date" id="start" class="w-100 d-block inputcss">
                     </div>
                     <div class="col-6">
-                        <label for="start"> Start Date</label>
+                        <label for="start" class="textarea-label-span"> Start Date</label>
                         <input type="date" id="start" class="w-100 d-block inputcss">
                     </div>
                 </div>
             </div>
+            <div class="form-element m-1 m-md-2"> <label for="about-organization" class="textarea-label-span">About Organization</label>
+                <textarea name="about-organization" id="about-organization" rows="5"
+                    placeholder="write something about organization" class="w-100 d-block inputcss"></textarea>
+            </div>
+
             <div class="form-element m-1 m-md-2 d-flex justify-content-end">
                 <button class="popup-btn text-light p-2 w-25">Submit</button>
             </div>
@@ -139,23 +160,37 @@
     <div id="popup2" class="col-11 col-md-8 col-lg-5 p-2">
         <!---------------------- form  ---------------------->
         <div class="close-btn" onclick="toggle2()">&times;</div>
-        <div class="form">     
+        <div class="form">
             <div class="form-element m-1 m-md-2">
-                <label for="wp">End Year</label>
+                <div class=" row">
+                    <span class="textarea-label-span">Martriculation status</span>
+                    <div class="col-6">
+                        <input type="radio" id="popup2-radio-1" name="popup2-radio">
+                        <label class="textarea-label-span" for="popup2-radio-1"> Pursuing</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="radio" id="popup2-radio-2" name="popup2-radio">
+                        <label class="textarea-label-span" for="popup2-radio-2"> Completed</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-element m-1 m-md-2">
+                <label class="textarea-label-span" for="wp">End Year</label>
                 <input type="text" id="wp" placeholder=" Enter your end year" class="w-100 d-block inputcss">
             </div>
             <div class="form-element m-1 m-md-2">
-                <label for="organization">Board Name</label>
-                <input type="text" id="organization" placeholder=" Enter your Board Name" class="w-100 d-block inputcss">
+                <label class="textarea-label-span" for="organization">Board Name</label>
+                <input type="text" id="organization" placeholder=" Enter your Board Name"
+                    class="w-100 d-block inputcss">
             </div>
             <div class="form-element m-1 m-md-2">
                 <div class="row">
                     <div class="col-6">
-                        <label for="ps">Performance Scale</label>
+                        <label class="textarea-label-span" for="ps">Performance Scale</label>
                         <input type="text" id="ps" class="w-100 d-block inputcss">
                     </div>
                     <div class="col-6">
-                        <label for="cgpa">CGPA</label>
+                        <label class="textarea-label-span" for="cgpa">CGPA</label>
                         <input type="text" id="cgpa" class="w-100 d-block inputcss">
                     </div>
                 </div>
